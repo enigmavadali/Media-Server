@@ -1,0 +1,304 @@
+<!--<html xmlns="http://www.w3.org/1999/html"/>-->
+<!--<head>-->
+    <!--<style>-->
+  <!--input[type=text] {-->
+  <!--width: 130px;-->
+  <!--box-sizing: border-box;-->
+  <!--border: 2px solid #ccc;-->
+  <!--border-radius: 4px;-->
+  <!--font-size: 16px;-->
+  <!--background-color: white;-->
+  <!--background-image: url('searchicon.png');-->
+  <!--background-position: 10px 10px;-->
+  <!--background-repeat: no-repeat;-->
+  <!--padding: 12px 20px 12px 40px;-->
+  <!-- -webkit-transition: width 0.4s ease-in-out;-->
+  <!--transition: width 0.4s ease-in-out;-->
+<!--}-->
+
+<!--input[type=text]:focus {-->
+  <!--width: 100%;-->
+
+  <!--.form-style-8{-->
+	<!--font-family: 'Open Sans Condensed', arial, sans;-->
+	<!--width: 500px;-->
+	<!--padding: 30px;-->
+	<!--background: #FFFFFF;-->
+	<!--margin: 50px auto;-->
+	<!--box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);-->
+	<!-- -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);-->
+	<!-- -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);-->
+
+<!--}-->
+<!--.form-style-8 h2{-->
+	<!--background: #4D4D4D;-->
+	<!--text-transform: uppercase;-->
+	<!--font-family: 'Open Sans Condensed', sans-serif;-->
+	<!--color: #797979;-->
+	<!--font-size: 18px;-->
+	<!--font-weight: 100;-->
+	<!--padding: 20px;-->
+	<!--margin: -30px -30px 30px -30px;-->
+<!--}-->
+<!--.form-style-8 input[type="text"],-->
+<!--.form-style-8 input[type="date"],-->
+<!--.form-style-8 input[type="datetime"],-->
+<!--.form-style-8 input[type="email"],-->
+<!--.form-style-8 input[type="number"],-->
+<!--.form-style-8 input[type="search"],-->
+<!--.form-style-8 input[type="time"],-->
+<!--.form-style-8 input[type="url"],-->
+<!--.form-style-8 input[type="password"],-->
+<!--.form-style-8 textarea,-->
+<!--.form-style-8 select-->
+<!--{-->
+	<!--box-sizing: border-box;-->
+	<!-- -webkit-box-sizing: border-box;-->
+	<!-- -moz-box-sizing: border-box;-->
+	<!--outline: none;-->
+	<!--display: block;-->
+	<!--width: 100%;-->
+	<!--padding: 7px;-->
+	<!--border: none;-->
+	<!--border-bottom: 1px solid #ddd;-->
+	<!--background: transparent;-->
+	<!--margin-bottom: 10px;-->
+	<!--font: 16px Arial, Helvetica, sans-serif;-->
+	<!--height: 45px;-->
+<!--}-->
+<!--.form-style-8 textarea{-->
+	<!--resize:none;-->
+	<!--overflow: hidden;-->
+<!--}-->
+<!--.form-style-8 input[type="button"],-->
+<!--.form-style-8 input[type="submit"]{-->
+	<!-- -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;-->
+	<!-- -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;-->
+	<!--box-shadow: inset 0px 1px 0px 0px #45D6D6;-->
+	<!--background-color: #2CBBBB;-->
+	<!--border: 1px solid #27A0A0;-->
+	<!--display: inline-block;-->
+	<!--cursor: pointer;-->
+	<!--color: #FFFFFF;-->
+	<!--font-family: 'Open Sans Condensed', sans-serif;-->
+	<!--font-size: 14px;-->
+	<!--padding: 8px 18px;-->
+	<!--text-decoration: none;-->
+	<!--text-transform: uppercase;-->
+<!--}-->
+<!--.form-style-8 input[type="button"]:hover,-->
+<!--.form-style-8 input[type="submit"]:hover {-->
+	<!--background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);-->
+	<!--background-color:#34CACA;-->
+<!--}-->
+<!--.upload-btn-wrapper {-->
+  <!--position: relative;-->
+  <!--overflow: hidden;-->
+  <!--display: inline-block;-->
+<!--}-->
+
+<!--.btn {-->
+  <!--border: 2px solid gray;-->
+  <!--color: gray;-->
+  <!--background-color: white;-->
+  <!--padding: 8px 20px;-->
+  <!--border-radius: 8px;-->
+  <!--font-size: 20px;-->
+  <!--font-weight: bold;-->
+<!--}-->
+
+<!--.upload-btn-wrapper input[type=file] {-->
+  <!--font-size: 100px;-->
+  <!--position: absolute;-->
+  <!--left: 0;-->
+  <!--top: 0;-->
+  <!--opacity: 0;-->
+<!--}-->
+
+
+
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;{% block content %}&ndash;&gt;-->
+  <!--&lt;!&ndash;<form class="site-form" method="post" action="/signup/">&ndash;&gt;-->
+    <!--&lt;!&ndash;{% csrf_token %}&ndash;&gt;-->
+      <!--&lt;!&ndash;<fieldset>&ndash;&gt;-->
+            <!--&lt;!&ndash;<legend>Sign up</legend>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{ form.as_p }}&ndash;&gt;-->
+            <!--&lt;!&ndash;<button type="submit">Sign up</button>&ndash;&gt;-->
+      <!--&lt;!&ndash;</fieldset>&ndash;&gt;-->
+  <!--&lt;!&ndash;</form>&ndash;&gt;-->
+<!--&lt;!&ndash;{% endblock %}&ndash;&gt;-->
+
+<!--<div class="form-style-8">-->
+  <!--<h2>Upload Video</h2>-->
+<!--<form action="/home/upload" method="post" enctype="multipart/form-data">-->
+            <!--{% csrf_token %}-->
+    <!--{{ form }}-->
+<!--<input type="submit" value="Upload" />-->
+
+        <!--</form>-->
+    <!--</div>-->
+
+
+<!--</body>-->
+
+<!--</body>-->
+<!--</html>-->
+<html>
+<head>
+<style type="text/css">
+.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2{
+	background: #4D4D4D;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.form-style-8 textarea{
+	resize:none;
+	overflow: hidden;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"]{
+	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover,
+.form-style-8 input[type="submit"]:hover {
+	background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+	background-color:#34CACA;
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
+</head>
+<body>
+<!--<div class="form-style-8">-->
+  <!--<h2>Login to your account</h2>-->
+  <!--&lt;!&ndash;<form method="POST" action="/home/upload" class="site-form">&ndash;&gt;-->
+      <!--&lt;!&ndash;{% csrf_token %}&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" name="field1" placeholder="Video Title" />&ndash;&gt;-->
+	<!--&lt;!&ndash;<textarea placeholder="Add some description of video" onkeyup="adjust_textarea(this)"></textarea>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="upload-btn-wrapper">&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="btn">Upload a file</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<input type="file" name="myfile" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+	<!--&lt;!&ndash;<br>&ndash;&gt;-->
+	<!--&lt;!&ndash;<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&lt;!&ndash;{{ form }}&ndash;&gt;&ndash;&gt;-->
+      <!--&lt;!&ndash;<br><br>&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="submit" value="Upload" />&ndash;&gt;-->
+  <!--&lt;!&ndash;</form>&ndash;&gt;-->
+<!--</div>-->
+<!--<div class="form-style-8">-->
+  <!--<h2>Login to your account</h2>-->
+  <!--<form method="POST" action="/home/upload" class="site-form">-->
+      <!--{% csrf_token %}-->
+    <!--<input type="text" name="field1" placeholder="Video Title" />{{ form.title }}-->
+	<!--<textarea placeholder="Add some description of video" onkeyup="adjust_textarea(this)"></textarea>{{ form.description }}-->
+    <!--<div class="upload-btn-wrapper">-->
+        <!--<button class="btn">Upload a file</button>-->
+        <!--<input type="file" name="myfile" />{{ form.docfile }}-->
+    <!--</div>-->
+	<!--<br>-->
+	<!--<br>-->
+      <!--&lt;!&ndash;{{ form }}&ndash;&gt;-->
+      <!--<br><br>-->
+      <!--<input type="submit" value="Upload" />-->
+  <!--</form>-->
+<!--</div>-->
+<div class="form-style-8">
+  <h2>Sign up</h2>
+<form action="/signup/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="Signup" />
+
+        </form>
+    </div>
+
+
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+{% load static %}
+<html lang="en">
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="{% static 'css/index.css' %}" rel="stylesheet" media="screen">
+<link href="{% static 'css/vidpage.css' %}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+video {
+  height:360px;
+  width:720px;
+
+}
+.sample-video {
+  margin: 20px;
+  padding:20px;
+
+  border-width:
+  display:block;
+  text-align:center;
+  position:relative;
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.upload {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.upload:hover {
+  background-color: RoyalBlue;
+}
+
+</style>
+    <link href="{% static 'css/bootstrap.min.css' %}" media="screen"  rel="stylesheet" >
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/plyr.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/slicknav.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+
+
+          <!--IF user is logged in -->
+        {% if user.is_authenticated %}
+          {% if user.is_superuser %}
+              <a href="/home/admin_upload" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Upload</a>
+          {% endif %}
+
+      <form class="logout-link" action="/logout/" method="POST">
+        {% csrf_token %}
+          <a href="/logout/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"><button type="submit">LogOut</button><a>
+      </form>
+        {% else %}
+              <!--<a href="/signup/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">SignUp</a>-->
+      <nav>
+          <span style="color:black">
+            <select name="Sign Up" value="Sign up" id="foo">
+                <option value="Sign Up"> Sign Up</option>
+                <option value="/student_signup/"> As a student</option>
+                <option value="/professor_signup/">As a Professor<a></option>
+            </select>
+          <ul>
+              <li>
+                  <a href="/login/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
+              </li>
+          </ul>
+              </span>
+        </nav>
+
+      {% endif %}
+<br>
+      <br>
+  </div>
+</div>
+<script>
+    document.getElementById("foo").onchange = function() {
+        if (this.selectedIndex!==0) {
+            window.location.href = this.value;
+        }
+    };
+</script>
+<div class="wrapper">
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</div>
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Dr. Prof. Amarsinh Vidhate</h1>
+    <h1 class="w3-margin w3-xlarge">Sandip Kumar Yadav</h1>
+    <h1 class="w3-margin w3-xlarge">Vatsal Srivastava</h1>
+    <h1 class="w3-margin w3-xlarge">Surya Rohit Vadali</h1>
+</div>
+    <script src="{% static 'js/jquery-3.2.0.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/countdown.js' %}"></script>
+    <script src="{% static 'js/parallax.js' %}"></script>
+    <script src="{% static 'js/amplitude.js' %}"></script>
+    <script src="{% static 'js/plyr.js' %}"></script>
+    <script src="{% static 'js/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+</body>
+</html>

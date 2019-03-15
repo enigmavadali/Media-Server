@@ -1,0 +1,560 @@
+<!--{% load static %}-->
+<!--<link href="{% static 'css/index.css' %}" rel="stylesheet" media="screen">-->
+
+<!--<html lang="en"><head>-->
+    <!--<meta charset="utf-8">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <!--<meta name="description" content="Askbootstrap">-->
+    <!--<title>RaitTube</title>-->
+
+    <!--<link href="{% static 'img/favicon.png' %}">-->
+    <!--<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">-->
+    <!--<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">-->
+    <!--<link href="{% static 'css/osahan.css' %}" rel="stylesheet">-->
+    <!--<link href="{% static 'vendor/owl-carousel/owl.carousel.css' %}">-->
+    <!--<link href="{% static 'vendor/owl-carousel/owl.theme.css' %}">-->
+    <!--<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>-->
+
+<!--<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-120909275-1"></script>-->
+<!--<style>-->
+<!--.text-line {-->
+    <!--background-color: transparent;-->
+    <!--color: black;-->
+    <!--outline: none;-->
+    <!--outline-style: none;-->
+    <!--border-top: none;-->
+    <!--border-left: none;-->
+    <!--border-right: none;-->
+    <!--border-bottom: solid #b9b2b2 1px;-->
+    <!--padding-top: 25px;-->
+    <!--padding-bottom: 3px;-->
+    <!--width: 665px;-->
+<!--}-->
+    <!--.btn {-->
+  <!--position:absolute;-->
+  <!--background-color: DodgerBlue;-->
+  <!--border: none;-->
+  <!--color: white;-->
+  <!--padding: 12px 16px;-->
+  <!--font-size: 16px;-->
+  <!--cursor: pointer;-->
+<!--}-->
+<!--.btn:hover {-->
+  <!--background-color: RoyalBlue;-->
+<!--}-->
+<!--</style>-->
+<!--</head>-->
+ <!--<body id="page-top" class="sidebar-toggled">-->
+    <!--<nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">-->
+       <!--&nbsp;&nbsp;-->
+       <!--<button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">-->
+       <!--<i class="fas fa-bars"></i>-->
+       <!--</button> &nbsp;&nbsp;-->
+       <!--<a class="navbar-brand mr-1" href="index.html"><img class="img-fluid" width="88" height="29" alt="" src="{% static 'img/rait.png' %}" ></a>-->
+       <!--<ul class="navbar-nav ml-auto ml-md-0 osahan-right-navbar">-->
+          <!--<li class="nav-item mx-1">-->
+             <!--{% if user.is_authenticated %}-->
+             <!--<a class="nav-link" href="/home/admin_upload">-->
+             <!--{% else %}-->
+             <!--<a class="nav-link" href="/home/professor_upload">-->
+             <!--{% endif %}-->
+             <!--<i class="fas fa-plus-circle fa-fw"></i>-->
+             <!--Upload Video-->
+             <!--</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item dropdown no-arrow osahan-right-navbar-user">-->
+             <!--<a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+             <!--{{ request.user.username }}-->
+             <!--</a>-->
+             <!--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">-->
+                <!--<a class="dropdown-item" href="account.html"><i class="fas fa-fw fa-user-circle"></i> &nbsp; My Account</a>-->
+                <!--<a class="dropdown-item" href="subscriptions.html"><i class="fas fa-fw fa-video"></i> &nbsp; Subscriptions</a>-->
+                <!--<a class="dropdown-item" href="settings.html"><i class="fas fa-fw fa-cog"></i> &nbsp; Settings</a>-->
+                <!--<div class="dropdown-divider"></div>-->
+                <!--<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-fw fa-sign-out-alt"></i> &nbsp; Logout</a>-->
+             <!--</div>-->
+          <!--</li>-->
+       <!--</ul>-->
+    <!--</nav>-->
+    <!--<div id="wrapper">-->
+       <!--&lt;!&ndash; Sidebar &ndash;&gt;-->
+       <!--<ul class="sidebar navbar-nav toggled">-->
+          <!--<li class="nav-item active">-->
+             <!--<a class="nav-link" href="index.html">-->
+             <!--<i class="fas fa-fw fa-home"></i>-->
+             <!--<span>Home</span>-->
+             <!--</a>-->
+          <!--</li>-->
+
+
+      <!--{% if user.is_authenticated %}-->
+          <!--<li class="nav-item">-->
+             <!--<a class="nav-link" href="upload-video.html">-->
+             <!--<i class="fas fa-fw fa-cloud-upload-alt"></i>-->
+             <!--<span>Upload Video</span>-->
+             <!--</a>-->
+          <!--</li>-->
+
+          <!--<li class="nav-item">-->
+             <!--<a class="nav-link" href="history-page.html">-->
+             <!--<i class="fas fa-fw fa-history"></i>-->
+             <!--<span>History Page</span>-->
+             <!--</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+             <!--<a class="nav-link" href="video-page.html">-->
+             <!--<i class="fas fa-fw fa-video"></i>-->
+             <!--<span>Video Page</span>-->
+             <!--</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+             <!--<a class="nav-link" href="/logout/">-->
+                <!--<i class="fas fa-sign-out-alt"></i>-->
+             <!--<span>Log OUt</span>-->
+             <!--</a>-->
+          <!--</li>-->
+          <!--{% else %}-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="/student_signup/">-->
+            <!--<i class="fas fa-user-plus"></i>-->
+            <!--<span >Sign up as a student</span>-->
+            <!--</a>-->
+            <!--<a class="nav-link" href="/professor_signup/">-->
+               <!--<i class="fas fa-user-plus"></i>-->
+               <!--<span >Sign up as a faculty</span>-->
+               <!--</a>-->
+         <!--</li>-->
+         <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="/login/">-->
+            <!--<i class="fas fa-sign-in-alt"></i>-->
+            <!--<span>Login</span>-->
+            <!--</a>-->
+         <!--</li>-->
+          <!--{% endif %}-->
+
+       <!--</ul>-->
+    <!--</div>-->
+         <!--<div id="content-wrapper">-->
+            <!--<div class="container-fluid pb-0">-->
+               <!--<div class="video-block section-padding">-->
+                  <!--<div class="row">-->
+                     <!--<div class="col-md-8">-->
+                        <!--<div class="single-video-left">-->
+                           <!--<div class="single-video">-->
+                              <!--&lt;!&ndash;<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/8LWZSGNjuF0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>&ndash;&gt;-->
+                              <!--<video width="100%" height="400" style="position:relative" id="mainvid" data-dashjs-player src="{{ obj.docfile.url }}" autoplay controls ><u></u>></video>-->
+                           <!--</div>-->
+                           <!--<div class="single-video-title box mb-3">-->
+                              <!--<h2><a href="#">{{ obj.title }}</a></h2>-->
+                              <!--<p class="mb-0"><i class="fas fa-eye"></i> {{ obj.views }} views</p>-->
+                               <!--{{ obj.likes }} <a href="/home/like/{{obj.id }}" ><i class="far fa-thumbs-up"></i></a>Like-->
+                           <!--</div>-->
+                           <!---->
+                           <!--<div class="single-video-info-content box mb-3">-->
+                               <!--<h6>Descrition :</h6>-->
+                              <!--<p>{{ obj.description }} </p>-->
+                              <!--<h6>Tags :</h6>-->
+                              <!--<p class="tags mb-0">-->
+                                 <!--<span><a href="#">{{ obj.tag }}</a></span>-->
+                              <!--</p>-->
+                           <!--</div>-->
+
+                             <!--<div class="single-video-info-content box mb-3">-->
+                                 <!--<form method="POST" action="/home/comment/{{ obj.id }}">-->
+                                     <!--{% csrf_token %}-->
+                                 <!--<span>-->
+                                     <!--&lt;!&ndash;<input type="text" class="text-line" />&ndash;&gt;-->
+                                     <!--{{ comment_form }}-->
+                                     <!--<button type="submit" class="btn"><i class="fas fa-comment"></i> Add your comment</button>-->
+                                 <!--</span>-->
+                                 <!--</form>-->
+
+                               <!--<h6>Comments  :</h6>-->
+
+                            <!--<table>-->
+                                <!--{% for comment in all_comments %}-->
+                                    <!--<tr>-->
+                                        <!--<td>-->
+                                            <!--{{ comment.user_id }}-->
+                                        <!--</td>-->
+                                        <!--<td>-->
+                                            <!--{{ comment.body }}-->
+                                        <!--</td>-->
+                                    <!--</tr>-->
+                                <!--{% endfor %}-->
+                            <!--</table>-->
+                           <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+
+                     <!--<div class="col-md-4">-->
+                        <!--<div class="single-video-right">-->
+                           <!--<div class="row">-->
+                              <!--<div class="col-md-12">-->
+                                 <!---->
+                                 <!--<div class="main-title">-->
+                                    <!---->
+                                    <!--<h6>Up Next</h6>-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                              <!--<div style="position:fixed" class="col-md-12">-->
+                                 <!--&lt;!&ndash;=======================Recommended videos================================&ndash;&gt;-->
+                                 <!--{% for document in recommended_docs %}-->
+                                 <!--<div class="video-card video-card-list">-->
+                                    <!--<div class="video-card-image">-->
+                                       <!--<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>-->
+                                       <!--<a href="#"><img class="img-fluid" src="{{document.thumbnail.url}}" alt=""></a>-->
+                                       <!--<div class="time">3:50</div>-->
+                                    <!--</div>-->
+
+                                       <!--<div class="video-title">-->
+                                          <!--<a href="#">{{document.title}}</a>-->
+                                       <!--</div>-->
+
+                                       <!--<div class="video-view">-->
+                                          <!--{{ document.views }} views &nbsp;<i class="fas fa-calendar-alt"></i>-->
+
+                                       <!--</div>-->
+                                       <!--<div>-->
+                                          <!--11 Months ago-->
+                                       <!--</div>-->
+
+                                    <!--</div>-->
+                                 <!--</div>-->
+
+                                 <!--{% endfor %}-->
+                               <!--{% for document in recommended_hist %}-->
+                                 <!--<div class="video-card video-card-list">-->
+                                    <!--<div class="video-card-image">-->
+                                       <!--<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>-->
+                                       <!--<a href="#"><img class="img-fluid" src="{{document.thumbnail.url}}" alt=""></a>-->
+                                       <!--<div class="time">3:50</div>-->
+                                    <!--</div>-->
+
+                                       <!--<div class="video-title">-->
+                                          <!--<a href="#">{{document.title}}</a>-->
+                                       <!--</div>-->
+
+                                       <!--<div class="video-view">-->
+                                          <!--{{ document.views }} views &nbsp;<i class="fas fa-calendar-alt"></i>-->
+
+                                       <!--</div>-->
+                                       <!--<div>-->
+                                          <!--11 Months ago-->
+                                       <!--</div>-->
+
+                                    <!--</div>-->
+                                 <!--</div>-->
+
+                                 <!--{% endfor %}-->
+
+                              <!--</div>-->
+                           <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+                  <!--</div>-->
+               <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; /.container-fluid &ndash;&gt;-->
+            <!--&lt;!&ndash; Sticky Footer &ndash;&gt;-->
+            <!---->
+         <!--</div>-->
+         <!--&lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+      <!--</div>-->
+      <!--&lt;!&ndash; /#wrapper &ndash;&gt;-->
+      <!--&lt;!&ndash; Scroll to Top Button&ndash;&gt;-->
+      <!--<a class="scroll-to-top rounded" href="#page-top" style="display: none;">-->
+      <!--<i class="fas fa-angle-up"></i>-->
+      <!--</a>-->
+      <!--&lt;!&ndash; Logout Modal&ndash;&gt;-->
+      <!--<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+         <!--<div class="modal-dialog modal-sm modal-dialog-centered" role="document">-->
+            <!--<div class="modal-content">-->
+               <!--<div class="modal-header">-->
+                  <!--<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>-->
+                  <!--<button class="close" type="button" data-dismiss="modal" aria-label="Close">-->
+                  <!--<span aria-hidden="true">×</span>-->
+                  <!--</button>-->
+               <!--</div>-->
+               <!--<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>-->
+               <!--<div class="modal-footer">-->
+                  <!--<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>-->
+                  <!--<a class="btn btn-primary" href="login.html">Logout</a>-->
+               <!--</div>-->
+            <!--</div>-->
+         <!--</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; Bootstrap core JavaScript&ndash;&gt;-->
+      <!--<script src='{% static "vendor/jquery/jquery.min.js" %}'>-->
+     <!--<script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'>-->
+      <!--<script src='{% static "vendor/jquery-easing/jquery.easing.min.js" %}'>-->
+      <!--<script src='{% static "vendor/owl-carousel/owl.carousel.js" %}'>-->
+       <!--<script src='{% static "js/custom.js" %}'>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+{% load static %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" media="screen">
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <title>RAIT Media Server</title>
+
+    <link href="{% static 'img/favicon.png' %}">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/osahan.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/owl-carousel/owl.carousel.css' %}">
+    <link href="{% static 'vendor/owl-carousel/owl.theme.css' %}">
+    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-120909275-1"></script>
+<style>
+.text-line {
+    background-color: transparent;
+    color: black;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #b9b2b2 1px;
+    padding-top: 25px;
+    padding-bottom: 3px;
+    width: 665px;
+}
+    .btn {
+  position:absolute;
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+</head>
+ <body id="page-top" class="sidebar-toggled">
+    <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
+       &nbsp;&nbsp;
+       <!-- <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
+       <i class="fas fa-bars"></i>
+       </button> &nbsp;&nbsp; -->
+       <a class="navbar-brand mr-1" href="/home/"><img class="img-fluid" width="88" height="29" alt="" src="{% static 'img/rait.png' %}" ></a>
+       <ul class="navbar-nav ml-auto ml-md-0 osahan-right-navbar">
+          <li class="nav-item mx-1">
+             {% if user.is_authenticated %}
+             <a class="nav-link" href="/home/admin_upload">
+             {% else %}
+             <a class="nav-link" href="/home/professor_upload">
+             {% endif %}
+             <i class="fas fa-plus-circle fa-fw"></i>
+             Upload Video
+             </a>
+          </li>
+          <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
+             <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             {{ request.user.username }}
+             </a>
+             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="account.html"><i class="fas fa-fw fa-user-circle"></i> &nbsp; My Account</a>
+                <a class="dropdown-item" href="subscriptions.html"><i class="fas fa-fw fa-video"></i> &nbsp; Subscriptions</a>
+                <a class="dropdown-item" href="settings.html"><i class="fas fa-fw fa-cog"></i> &nbsp; Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-fw fa-sign-out-alt"></i> &nbsp; Logout</a>
+             </div>
+          </li>
+       </ul>
+    </nav>
+    <div id="wrapper">
+       <!-- Sidebar -->
+       <ul class="sidebar navbar-nav toggled">
+          <li class="nav-item active">
+             <a class="nav-link" href="/home/">
+             <i class="fas fa-fw fa-home"></i>
+             <span>Home</span>
+             </a>
+          </li>
+
+
+      {% if user.is_authenticated %}
+
+
+          <li class="nav-item">
+             <a class="nav-link" href="/home/history">
+             <i class="fas fa-fw fa-history"></i>
+             <span>History Page</span>
+             </a>
+          </li>
+
+          <li class="nav-item">
+             <a class="nav-link" href="/logout/">
+                <i class="fas fa-sign-out-alt"></i>
+             <span>Log OUt</span>
+             </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/student_signup/">
+            <i class="fas fa-user-plus"></i>
+            <span >Sign up as a student</span>
+            </a>
+            <a class="nav-link" href="/professor_signup/">
+               <i class="fas fa-user-plus"></i>
+               <span >Sign up as a faculty</span>
+               </a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/login/">
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Login</span>
+            </a>
+         </li>
+          {% endif %}
+
+       </ul>
+
+
+{% if check_value %}
+  {% if obj.is_time_started %}
+       <div id="content-wrapper">
+            <div class="container-fluid pb-0">
+               <div class="video-block section-padding">
+                  <div class="row">
+                     <div class="col-md-8">
+                        <div class="single-video-left">
+                           <div class="single-video">
+                              <video width="100%" height="400" style="position:relative" id="mainvid" data-dashjs-player src="{{ obj.docfile.url }}" autoplay controls ><u></u>></video>
+                           </div>
+                           <div class="single-video-title box mb-3">
+                              <h2><a href="/home/{{obj.id }}">{{ obj.title }}</a></h2>
+                              <p class="mb-0"><i class="fas fa-eye"></i> {{ obj.views }}
+                                {{ obj.likes }} <a href="/home/like/{{obj.id }}" ><i class="far fa-thumbs-up"></i></a>Like
+                              </p>
+                           </div>
+                           <div class="single-video-info-content box mb-3">
+                              <h6>Descrition :</h6>
+                              <p>{{ obj.description }} </p>
+                              <h6>Tags :</h6>
+                              <p class="tags mb-0">
+                                 <span><a href="#">{{ obj.tag }}</a></span>
+                              </p>
+                           </div>
+                             <div class="single-video-info-content box mb-3">
+                                 <form method="POST" action="/home/comment/{{obj_type}}/{{ obj.id }}">
+                                     {% csrf_token %}
+                                 <span>
+                                     <!--<input type="text" class="text-line" />-->
+                                     {{ comment_form }}
+                                     <button type="submit" class="btn"><i class="fas fa-comment"></i> Add your comment</button>
+                                 </span>
+                                 </form>
+                               <h6>Comments  :</h6>
+                            <table>
+                                {% for comment in all_comments %}
+                                    <tr>
+                                        <td>
+                                            {{ comment.user_id }}
+                                        </td>
+                                        <td>
+                                            {{ comment.body }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                            </div>
+
+                        </div>
+                     </div>
+{% else %}
+<div class="row">
+         <div class="col-md-8 mx-auto text-center  pt-4 pb-5">
+            <h1><img alt="404" src="{% static 'img/login.png' %}" class="img-fluid"></h1>
+            <h1>The time has not yet started</h1>
+            <p class="land">The video will start on {{ obj.start_date}} at {{obj.start_hour}} : {{obj.start_min}}.</p>
+         </div>
+      </div>
+{% endif %}
+{% if obj_type  == "Doc" %}
+                     <div class="col-md-4">
+                        <div class="single-video-right">
+                           <div class="row">
+                              <div class="col-md-12">
+
+                                 <div class="main-title">
+
+                                    <h6>Up Next</h6>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                            {% for document in recommended_docs %}
+                                 <div class="video-card video-card-list">
+                                    <div class="video-card-image">
+                                       <a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+                                       <a href="/home/{{document.id }}"><img class="img-fluid" src="{{document.thumbnail.url}}" alt=""></a>
+                                       <div class="time">3:50</div>
+                                    </div>
+                                    <div class="video-card-body">
+                                       <div class="video-title">
+                                          <a href="/home/{{document.id }}">{{document.title}}</a>
+                                       </div>
+                                 </div>
+
+
+                                       <div class="video-view">
+                                          {{ document.views }} views &nbsp;<i class="fas fa-calendar-alt"></i>
+                                       </div>
+<br>
+
+                             {% endfor %}
+
+                             {% for document in recommended_hist %}
+                                 <div class="video-card video-card-list">
+                                    <div class="video-card-image">
+                                       <a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+                                       <a href="/home/{{document.id }}"><img class="img-fluid" src="{{document.thumbnail.url}}" alt=""></a>
+                                       <div class="time">3:50</div>
+                                    </div>
+                                    <div class="video-card-body">
+                                       <div class="video-title">
+                                          <a href="/home/{{document.id }}">{{document.title}}</a>
+                                       </div>
+                                 </div>
+
+
+                                       <div class="video-view">
+                                          {{ document.views }} views &nbsp;<i class="fas fa-calendar-alt"></i>
+                                       </div>
+<br>
+
+                             {% endfor %}
+
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+        {% endif %}
+  {% else %}
+  <div class="row">
+           <div class="col-md-8 mx-auto text-center  pt-4 pb-5">
+              <h1><img alt="404" src="{% static 'img/login.png' %}" class="img-fluid"></h1>
+              <h1>Register for Lecture</h1>
+              <p class="land">Click on the register button to be able to view the lecture video.</p>
+              <div class="mt-5">
+                 <a class="btn btn-outline-primary" href="{% url 'videoapp:reg_stud' obj.id %}"><i class="mdi mdi-home"></i> Register</a>
+              </div>
+           </div>
+        </div>
+  {% endif %}
+            </div>

@@ -1,0 +1,151 @@
+
+{% extends "base1.html" %}
+
+{% load static %}
+
+
+    {% block content %}
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Welcome to RAIT MEDIA SERVER</h1>
+  <p class="w3-xlarge">You can find all videos related to placement activities in this portal.</p>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+</header>
+
+    <div>
+    {% if user.is_authenticated %}
+          <div class="movie-tab-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="movie-tab">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="lmovie-tab" data-toggle="tab" href="#lmovie" role="tab" aria-controls="lmovie" aria-selected="true">Recent Uploads</a>
+                                </li>
+
+                            </ul>
+                            {% if documents %}
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane show active" id="lmovie" role="tabpanel" aria-labelledby="lmovie-tab">
+                                    <div class="tab-carousel owl-carousel">
+
+                                        {% for document in documents %}
+                                    <div class="single-top-movie">
+                                        <div class="img">
+                                            <a href={{document.docfile.url}} target="_blank">
+                                                <img src="{{document.thumbnail.url}}" alt="">
+                                            </a>
+                                        </div>
+
+                                            <i class="far fa-play-circle"></i>
+                                        </a>
+                                        <div class="content">
+                                           <h2 class="name">
+                                                <a href="{% url 'videoapp:play' document.id %}" target="_blank">{{ document.title }}</a>
+                                            </h2>
+
+                                            <p class="date">july 26, 2018</p>
+                                            <p class="duration">10 :50 :12</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+
+                            {% else %}
+                            <p>No documents.</p>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+<!-- ============================================================================================================== -->
+ <div>
+    {% if user.is_authenticated %}
+
+          <div class="movie-tab-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="movie-tab">
+
+                            <ul class="nav nav-tabs" data-columns="2" id="myTab" role="tablist">
+                                <span>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="lmovie-tab" data-toggle="tab" href="#lmovie" role="tab" aria-controls="lmovie" aria-selected="true">Lecture Videos</a>
+                                    </li>
+                                    {% if user.is_staff %}
+                                    <li>
+                                        <a href="/home/professor_upload"><button class="upload"><i class="fas fa-upload"></i> Upload</button></a>
+                                    </li>
+                                    {% endif %}
+                                </span>
+
+
+
+
+                            </ul>
+                            {% if lectures %}
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane show active" id="lmovie" role="tabpanel" aria-labelledby="lmovie-tab">
+                                    <div class="tab-carousel owl-carousel">
+
+                                        {% for lecture in lectures %}
+                                    <div class="single-top-movie">
+                                        <div class="img">
+                                            <a href={{document.docfile.url}} target="_blank">
+                                                <img src="{{lecture.thumbnail.url}}" alt="">
+                                            </a>
+                                        </div>
+
+                                            <i class="far fa-play-circle"></i>
+                                        </a>
+                                        <div class="content">
+                                           <h2 class="name">
+                                                <a href="{% url 'videoapp:play_prof' lecture.id %}" target="_blank">{{ lecture.title }}</a>
+                                            </h2>
+
+                                            <p class="date">july 26, 2018</p>
+                                            <p class="duration">10 :50 :12</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+
+                            {% else %}
+                            <p>No Lectures.</p>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+
+
+{% endblock %}
