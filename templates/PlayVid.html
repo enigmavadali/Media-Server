@@ -546,13 +546,13 @@
                </div>
         {% endif %}
   {% else %}
-  <div class="row">
+  <div class="row" style="margin-left:550px">
            <div class="col-md-8 mx-auto text-center  pt-4 pb-5">
               <h1><img alt="404" src="{% static 'img/login.png' %}" class="img-fluid"></h1>
               <h1>Register for Lecture</h1>
               <p class="land">Click on the register button to be able to view the lecture video.</p>
               <div class="mt-5">
-                 <a class="btn btn-outline-primary" href="{% url 'videoapp:reg_stud' obj.id %}"><i class="mdi mdi-home"></i> Register</a>
+                 <a style="margin-left:-40" class="btn btn-outline-primary" href="{% url 'videoapp:reg_stud' obj.id %}"><i class="mdi mdi-home"></i> Register</a>
               </div>
            </div>
         </div>
