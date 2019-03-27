@@ -32,6 +32,7 @@ def history(request):
             if(elem.vid_id == doc.id):
                 vids.append(doc)
                 break
+    vids.reverse()
     return render(request,'history-page.html',{'watched':vids})
 
 
